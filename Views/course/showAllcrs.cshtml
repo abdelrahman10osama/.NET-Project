@@ -1,0 +1,37 @@
+﻿@model List<WebApplication2.Models.course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Hours</th>
+            <th>Department</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Hours</td>
+                    <td>@item.dept_id</td>
+
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<a href="/course/New">ADD course To List</a>

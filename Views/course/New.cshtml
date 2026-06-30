@@ -1,0 +1,67 @@
+﻿@model coursewithDept
+
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New Course</h1>
+
+<form asp-action="SaveNew" asp-controller="course" method="post">
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+   
+
+    <div class="mb-3">
+        <label>Degree</label>
+        <input asp-for="Degree" class="form-control" />
+        <span asp-validation-for="Degree" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Mindegree</label>
+        <input asp-for="MinDegree" class="form-control" />
+        <span asp-validation-for="MinDegree" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Hours</label>
+        <input asp-for="Hours" class="form-control" />
+        <span asp-validation-for="Hours" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label>Departments</label>
+
+        <select asp-for="dept_id" class="form-control">
+            <option value="">-- Select Department --</option>
+
+            @foreach (var dept in Model.DepartmentList)
+            {
+                <option value="@dept.ID">@dept.Name</option>
+            }
+        </select>
+       <span asp-validation-for="dept_id" class="text-danger"></span>
+    </div>
+
+
+    <input type="submit" value="Create" class="btn btn-success" />
+
+</form>
+
+<br />
+
+<a asp-action="Index" asp-controller="course">
+    Back To List
+</a>
+
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

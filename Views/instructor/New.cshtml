@@ -1,0 +1,65 @@
+﻿@model InstructorWithDept
+
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New Instructor</h1>
+
+<form asp-action="SaveNew" asp-controller="Instructor" method="post">
+
+    <div class="mb-3">
+        <label>Name</label>
+        <input asp-for="EmpName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Image</label>
+        <input asp-for="Image" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Salary</label>
+        <input asp-for="EmpSalary" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <input asp-for="Adress" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Department</label>
+
+        <select asp-for="DepartmentId" class="form-control">
+            <option value="">-- Select Department --</option>
+
+            @foreach (var dept in Model.DepartmentList)
+            {
+                <option value="@dept.ID">@dept.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Course</label>
+
+        <select asp-for="CourseId" class="form-control">
+            <option value="">-- Select course --</option>
+
+            @foreach (var crs in Model.courseList)
+            {
+                <option value="@crs.Id">@crs.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Create" class="btn btn-success" />
+
+</form>
+
+<br />
+
+<a asp-action="Index" asp-controller="Instructor">
+    Back To List
+</a>
