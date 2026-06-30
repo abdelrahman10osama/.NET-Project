@@ -117,7 +117,7 @@ Example:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ITI-Company-System.git
+git clone https://github.com/Abdelrahman10osama/.NET-project.git
 ```
 
 2. Open the solution using Visual Studio.
@@ -133,18 +133,6 @@ Update-Database
 ```
 
 6. Run the project.
-
----
-
-## 📸 Screenshots
-
-You can add screenshots here after uploading them.
-
-- Home Page
-- Login
-- Register
-- Instructor List
-- Course List
 
 ---
 
